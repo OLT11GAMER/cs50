@@ -18,10 +18,11 @@
     </div>
 
     <script>
-        // Function to start the countdown timer
+        var clock;
+        // Fbase function to start timer
         function startTimer(duration, display) {
             var timer = duration, minutes, seconds;
-            setInterval(function () {
+            function time() {
                 minutes = parseInt(timer / 60, 10);
                 seconds = parseInt(timer % 60, 10);
 
@@ -33,16 +34,21 @@
                 if (--timer < 0) {
                     timer = duration;
                 }
-            }, 1000);
+            }
+
+            clearInterval(clock);
+            clock = setInterval(time, 1000);
         }
 
         // Start the timer when the debater starts his speech
         function startSpeech() {
+            
             var sevenMinutes = 60 * 7,
                 display = document.querySelector('#timer');
             startTimer(sevenMinutes, display);
         };
         function startPrep() {
+            
             var fifteenMinutes = 60 * 15,
                 display = document.querySelector('#timer');
             startTimer(fifteenMinutes, display);
