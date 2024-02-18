@@ -101,5 +101,21 @@ body {
   -ms-grid-column: 1;
   -ms-grid-column-span: 3;
   grid-area: buttons;
+  background-color: #f0e4c0;
+  border-style: dashed;
+  padding: 1rem;
+  gap: 1rem;
+  border-color: #bba17b;
+}
+
+button {
+  color: white;
+  font-size: large;
+  border-radius: .75rem;
+  border-color: blanchedalmond;
+  background-color: #99774b;
+  border-style: dashed;
+  padding: 1rem;
+  gap: 1.5rem;
 }
 /*# sourceMappingURL=main.css.map */

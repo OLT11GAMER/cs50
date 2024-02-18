@@ -80,9 +80,9 @@
             clearInterval(clock1min);
             clearInterval(clocklastmin);
             
-            var sevenMinutes = 6 * 7;
-            var oneMinute = 6;
-            var sixMinutesInMiliseconds = 1000 * 6 * 6;
+            var sevenMinutes = 60 * 7;
+            var oneMinute = 60;
+            var sixMinutesInMiliseconds = 1000  * 60;
             var display = document.querySelector('#timer');
             var protectedMinute = document.querySelector('#protectedMinute');
             var lastMinute = document.querySelector('#lastMinute');
@@ -91,8 +91,9 @@
             setTimeout(() => { clocklastmin = startTimer(oneMinute, lastMinute); singleClap(); }, sixMinutesInMiliseconds);
             clock7min = startTimer(sevenMinutes, display);
 
-            setTimeout(()=>{clearInterval(clock1min)},60*1000)
-            setTimeout(()=>{clearInterval(clock7min);clearInterval(clocklastmin)},sevenMinutes*1000)
+            setTimeout(()=>{clearInterval(clock1min)},oneMinute*1000 +1000)
+            setTimeout(()=>{clearInterval(clock7min)},sevenMinutes*1000 +1000)
+            setTimeout(()=>{clearInterval(clocklastmin)},sevenMinutes*1000 +2000)
         };
 
         function stop() {
@@ -111,7 +112,7 @@
             var fifteenMinutes = 60 * 15;
             var display = document.querySelector('#timer');
             clock15min = startTimer(fifteenMinutes, display);
-            setTimeout(()=>{clearInterval(clock15min)},sevenMinutes*1000)
+            setTimeout(()=>{clearInterval(clock15min)},fifteenMinutes*1000)
             ring();
         };
     </script>

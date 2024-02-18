@@ -60,4 +60,22 @@ body {
 .buttons{
     display: grid;
     grid-area: buttons;
+    background-color: rgb(240, 228, 192);
+    border-style: dashed;
+    padding: 1rem;
+    gap: 1rem;
+    border-color: rgb(187, 161, 123);
+    
+}
+button{
+   
+ color: rgb(255, 255, 255);
+ font-size: large;
+ border-radius: .75rem;
+ border-color: blanchedalmond;
+    background-color: rgb(153, 119, 75);
+    border-style: dashed;
+    padding: 1rem;
+    gap: 1.5rem;
+  
 }
