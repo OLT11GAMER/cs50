@@ -14,29 +14,26 @@
             <div class="timer" id="lastMinute">1:00</div>
     
         <div class="buttons">
-            <button onclick="startSpeech()"> Speech</button>
-            <button onclick="startPrep()"> Speech</button>
+            <button onclick="startSpeech()">Speech</button>
+            <button onclick="startPrep()">Preparation</button>
+            <button onclick="stop()">Stop</button>
         </div>
         </div>
     </div>
 
     <script>
         var clock7min;
-        var c1=true;
         var clock15min;
-        var clock1min;
-        var c2 = true;
+        var clock1min; 
         var clocklastmin;
         let myAudio = document.querySelector('#audio')
-         
-        // Fbase function to start timer
-        function startTimer(duration, display,clock,c) {
-            
-            
-            var timer = duration, minutes, seconds;
+
+        // Function to start timer
+        function startTimer(duration, display) {
+            var timer = duration;
             function time() {
-                minutes = parseInt(timer / 60, 10);
-                seconds = parseInt(timer % 60, 10);
+                var minutes = parseInt(timer / 60, 10);
+                var seconds = parseInt(timer % 60, 10);
 
                 minutes = minutes < 10 ? "0" + minutes : minutes;
                 seconds = seconds < 10 ? "0" + seconds : seconds;
@@ -45,63 +42,67 @@
 
                 if (--timer < 0) {
                     timer = duration;
-                    if(duration < 120){
-                        singleClap()
-                    }else if(duration>480){
-                        ring()
-                    }else{
-                        doubleClap()
+                    if (duration < 120) {
+                        singleClap();
+                    } else if (duration > 480) {
+                        ring();
+                    } else {
+                        doubleClap();
                     }
                     
                 }
             }
 
-            
-            clock = setInterval(time, 1000,c);
-            setTimeout(function(){
-                clearInterval(clock);
-            },1000 * duration +1000)
+            return setInterval(time, 1000);
         }
-        // clap to indicate start of timer
+
+        // Function to indicate start of timer
         function singleClap() {
-	        let ding = new Audio('media/singleClap.wav');
-	        ding.play();
+            let ding = new Audio('media/singleClap.wav');
+            ding.play();
         }  
+
         function doubleClap() {
-	        let ding = new Audio('media/doubleClap.wav');
-	        ding.play();
+            let ding = new Audio('media/doubleClap.wav');
+            ding.play();
         } 
+
         function ring() {
-	        let ding = new Audio('media/ring.mp3');
-	        ding.play();
+            let ding = new Audio('media/ring.mp3');
+            ding.play();
         }
         
         // Start the timer when the debater starts his speech
         function startSpeech() {
-            c1=true
-            c2=false
             doubleClap()
             clearInterval(clock15min);
             clearInterval(clock7min);
             clearInterval(clock1min);
             clearInterval(clocklastmin);
             
-            var sevenMinutes = 60 * 7;
-            var oneMinute = 60;
-            var sixMinutesInMiliseconds = 1000 * 60 * 6;
+            var sevenMinutes = 6 * 7;
+            var oneMinute = 6;
+            var sixMinutesInMiliseconds = 1000 * 6 * 6;
             var display = document.querySelector('#timer');
             var protectedMinute = document.querySelector('#protectedMinute');
             var lastMinute = document.querySelector('#lastMinute');
                 
+            clock1min = startTimer(oneMinute, protectedMinute);
+            setTimeout(() => { clocklastmin = startTimer(oneMinute, lastMinute); singleClap(); }, sixMinutesInMiliseconds);
+            clock7min = startTimer(sevenMinutes, display);
 
-            startTimer(oneMinute,protectedMinute,clock1min,c1);
-            setTimeout(()=>{ startTimer(oneMinute,lastMinute,clocklastmin,c1);singleClap()},sixMinutesInMiliseconds);
-            startTimer(sevenMinutes, display,clock7min,c1);
+            setTimeout(()=>{clearInterval(clock1min)},60*1000)
+            setTimeout(()=>{clearInterval(clock7min);clearInterval(clocklastmin)},sevenMinutes*1000)
         };
+
+        function stop() {
+            clearInterval(clock15min);
+            clearInterval(clock7min);
+            clearInterval(clock1min);
+            clearInterval(clocklastmin);
+        }
+
         function startPrep() {
-            c1=false
-            c2=true
-            ring()
             clearInterval(clock15min);
             clearInterval(clock7min);
             clearInterval(clock1min);
@@ -109,7 +110,9 @@
             
             var fifteenMinutes = 60 * 15;
             var display = document.querySelector('#timer');
-            startTimer(fifteenMinutes, display,clock15min,c2);
+            clock15min = startTimer(fifteenMinutes, display);
+            setTimeout(()=>{clearInterval(clock15min)},sevenMinutes*1000)
+            ring();
         };
     </script>
 </body>
