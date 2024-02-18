@@ -3,16 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Timer Website</title>
+    <!-- Title of the webpage -->
+    <title>Bp Debate Timer</title>
+    <!-- Link to external CSS file -->
     <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
     <div class="container">
         <div class="timer-window">
+            <!-- Display for the main, protected and last minute timers -->
             <div class="timer" id="timer">7:00</div>
             <div class="timer" id="protectedMinute">1:00</div>
             <div class="timer" id="lastMinute">1:00</div>
-    
+        <!-- Buttons to control timer functionality -->
         <div class="buttons">
             <button onclick="startSpeech()">Speech</button>
             <button onclick="startPrep()">Preparation</button>
@@ -22,6 +25,7 @@
     </div>
 
     <script>
+        // Declaration of variables for timers
         var clock7min;
         var clock15min;
         var clock1min; 
@@ -40,6 +44,7 @@
 
                 display.textContent = minutes + ":" + seconds;
 
+                // Logic to handle timer completion and audio notifications
                 if (--timer < 0) {
                     timer = duration;
                     if (duration < 120) {
@@ -52,21 +57,21 @@
                     
                 }
             }
-
+            // Start the timer interval
             return setInterval(time, 1000);
         }
 
-        // Function to indicate start of timer
+        // Function to play single clap audio
         function singleClap() {
             let ding = new Audio('media/singleClap.wav');
             ding.play();
         }  
-
+         // Function to play double clap audio
         function doubleClap() {
             let ding = new Audio('media/doubleClap.wav');
             ding.play();
         } 
-
+        // Function to play ring audio
         function ring() {
             let ding = new Audio('media/ring.mp3');
             ding.play();
@@ -79,36 +84,36 @@
             clearInterval(clock7min);
             clearInterval(clock1min);
             clearInterval(clocklastmin);
-            
+            // Set durations for timers
             var sevenMinutes = 60 * 7;
             var oneMinute = 60;
             var sixMinutesInMiliseconds = 1000  * 60;
             var display = document.querySelector('#timer');
             var protectedMinute = document.querySelector('#protectedMinute');
             var lastMinute = document.querySelector('#lastMinute');
-                
+            // Start the timers and  intervals   
             clock1min = startTimer(oneMinute, protectedMinute);
             setTimeout(() => { clocklastmin = startTimer(oneMinute, lastMinute); singleClap(); }, sixMinutesInMiliseconds);
             clock7min = startTimer(sevenMinutes, display);
-
+            // set timeout function to stop timers after they they go to zero
             setTimeout(()=>{clearInterval(clock1min)},oneMinute*1000 +1000)
             setTimeout(()=>{clearInterval(clock7min)},sevenMinutes*1000 +1000)
             setTimeout(()=>{clearInterval(clocklastmin)},sevenMinutes*1000 +2000)
         };
-
+        // Function to stop all timers
         function stop() {
             clearInterval(clock15min);
             clearInterval(clock7min);
             clearInterval(clock1min);
             clearInterval(clocklastmin);
         }
-
+        // Start the timer for preparation
         function startPrep() {
             clearInterval(clock15min);
             clearInterval(clock7min);
             clearInterval(clock1min);
             clearInterval(clocklastmin);
-            
+            // Set duration for preparation timer
             var fifteenMinutes = 60 * 15;
             var display = document.querySelector('#timer');
             clock15min = startTimer(fifteenMinutes, display);
