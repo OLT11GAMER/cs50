@@ -21,12 +21,43 @@ body {
     outline-style: dotted;
     border-style: ridge;
     border-radius: 1rem;
+    
     grid-template-rows: 2fr 3fr;
-    grid-template-areas: "timer""buttons";
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas: 'protectedMinute timer lastMinute'
+    'buttons buttons buttons';
 }
-.timer {
+.timer{
     display: grid;
-    grid-area: "timer";
+
     
     font-size: 48px;
+}
+#timer{
+    display: grid;
+    grid-area: timer;
+    justify-content: center;
+    background-color: beige;
+    align-items: center;
+}
+#protectedMinute{
+    display: grid;
+    
+    grid-area: protectedMinute;
+    
+    font-size: 32px;
+    justify-content: center;
+    background-color: beige;
+    align-items: center;
+}
+#lastMinute{display: grid;
+    grid-area: lastMinute;
+    font-size: 32px;
+    justify-content: center;
+    background-color: beige;
+    align-items: center;
+}
+.buttons{
+    display: grid;
+    grid-area: buttons;
 }
