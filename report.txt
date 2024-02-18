@@ -1,0 +1,31 @@
+# Status Report
+
+Your name
+
+Olt Imeri
+
+Your section leader's name
+
+Olt Imeri
+
+Project title
+
+DebateHub
+
+***
+
+Short answers for the below questions suffice.!
+
+What have you done for your project so far?
+
+So far we have implemented the timer to our web application. The timer is specific for British Parliamentary (BP) format and is adjusted for different phases of the debate such as the preparation time and the speaking time. We also incorporated sound cues so debaters are informed about the starting time, time left and limit.
+
+What have you not done for your project yet?
+
+When we wrote the project proposal we were a little too ambitious! What we haven’t implemented yet is the informational part that offers resources about debate such as different formats, debate history, rules and strategies of each style.
+
+What problems, if any, have you encountered?
+
+Time!
+
+
