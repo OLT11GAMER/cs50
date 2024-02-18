@@ -1,4 +1,4 @@
-# Bp Debate Timer Website
+# BP Debate Timer Website
 
 This is a simple timer website built using HTML, CSS, and JavaScript. It allows users to set timers for various purposes like speeches or preparation time. 
 
