@@ -18,6 +18,3 @@ This is a simple timer website built using HTML, CSS, and JavaScript. It allows 
 
 ## Compatibility
 Tested and working on modern web browsers including Chrome, Firefox, and Safari.
-
-## License
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
