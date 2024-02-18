@@ -1,0 +1,32 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.timer-window{
+    display: grid;
+    justify-content: center;
+    background-color: beige;
+    align-items: center;
+    height: 50vh;
+    width: 20vh;
+    min-width: 300px;
+    padding: 2rem;
+    outline-style: dotted;
+    border-style: ridge;
+    border-radius: 1rem;
+    grid-template-rows: 2fr 3fr;
+    grid-template-areas: "timer""buttons";
+}
+.timer {
+    display: grid;
+    grid-area: "timer";
+    
+    font-size: 48px;
+}
