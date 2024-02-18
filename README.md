@@ -1,6 +1,6 @@
-# BP Debate Timer Website
+# DebateHub - BP Debate Timer
 
-[text](https://bp-debate-timer.netlify.app/)
+[DebateHub](https://bp-debate-timer.netlify.app/)
 
 This is a simple timer website built using HTML, CSS, and JavaScript. It allows users to set timers for various purposes like speeches or preparation time. 
 
@@ -22,4 +22,4 @@ This is a simple timer website built using HTML, CSS, and JavaScript. It allows 
 Tested and working on modern web browsers including Chrome, Firefox, and Safari.
 
 ## Presentation
-[text](https://youtu.be/neGgwu1QTcg)
+[![Watch the video](https://img.youtube.com/vi/neGgwu1QTcg/hqdefault.jpg)](https://youtu.be/neGgwu1QTcg)
