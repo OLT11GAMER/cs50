@@ -23,3 +23,9 @@ Tested and working on modern web browsers including Chrome, Firefox, and Safari.
 
 ## Presentation
 [![Watch the video](https://img.youtube.com/vi/neGgwu1QTcg/hqdefault.jpg)](https://youtu.be/neGgwu1QTcg)
+
+
+## If the links aove don't work
+
+https://bp-debate-timer.netlify.app/
+https://youtu.be/neGgwu1QTcg
