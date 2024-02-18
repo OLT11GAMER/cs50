@@ -10,6 +10,10 @@
     <div class="container">
         <div class="timer-window">
         <div class="timer" id="timer">7:00</div>
+        <div class="buttons">
+            <button onclick="startSpeech()"> Speech</button>
+            <button onclick="startPrep()"> Speech</button>
+        </div>
         </div>
     </div>
 
@@ -32,11 +36,16 @@
             }, 1000);
         }
 
-        // Start the timer when the page loads
-        window.onload = function () {
+        // Start the timer when the debater starts his speech
+        function startSpeech() {
             var sevenMinutes = 60 * 7,
                 display = document.querySelector('#timer');
             startTimer(sevenMinutes, display);
+        };
+        function startPrep() {
+            var fifteenMinutes = 60 * 15,
+                display = document.querySelector('#timer');
+            startTimer(fifteenMinutes, display);
         };
     </script>
 </body>
