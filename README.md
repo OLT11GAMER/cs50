@@ -27,5 +27,5 @@ Tested and working on modern web browsers including Chrome, Firefox, and Safari.
 
 ## If the links aove don't work
 
-https://bp-debate-timer.netlify.app/
-https://youtu.be/neGgwu1QTcg
+- https://bp-debate-timer.netlify.app/
+- https://youtu.be/neGgwu1QTcg
